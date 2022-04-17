@@ -1,0 +1,371 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Student Mark Predictor ML App</title>
+  <link rel="stylesheet" type="text/css" href="\static\css\style.css"> 
+</head>
+
+<body>
+
+    <header class="header">
+        <!-- <img src="images/logo.png" alt="our main logo" class="logo" /> -->
+  <p class="logo">PredMarks</p>
+        <nav class="navbar">
+          <ul class="navbar-lists">
+            <li><a href="#home" class="navbar-link home-link">Home</a></li>
+            <li>
+              <a href="#tech" class="navbar-link about-link">Tech</a>
+            </li>
+            <li>
+              <a class="navbar-link service-link" href="#working"
+                >Work</a
+              >
+            </li>
+            <li>
+              <a class="navbar-link contact-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-navbar-btn">
+          <ion-icon name="menu-outline" class="mobile-nav-icon"></ion-icon>
+          <ion-icon name="close-outline" class="mobile-nav-icon"></ion-icon>
+        </div>
+      </header>
+
+      <main>
+        <section class="section-hero section" id="home">
+          <div class="container grid grid-two-column">
+            <div class="section-hero-data">
+              <h1 class="hero-heading">Marks Prediction</h1>
+              <p class="hero-para">
+               This system aims to predict studnt's marks using linear regression. The idea
+               behind this analysis is to predict the marks of students by their studying hours.
+              </p>
+              <div>
+                <a href="#working" class="btn hireme-btn">Try now</a>
+              </div>
+            </div>
+            <!-- hero section right side  -->
+            <div class="section-hero-image">
+              <picture>
+                <source srcset="main.png" type="image/png" />
+                <img
+                  src="main.png"
+                  alt="This is main learning image."
+                  class="hero-img"
+                />
+              </picture>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <!-- =======================================
+        ==================
+        =============
+        ===== -->
+
+        <section class="section-techdata section" id="tech">
+            <div class="container grid grid-two-column">
+              <div class="tech-image">
+                <img src="tech.jpg" alt="my tech data image" />
+              </div>
+              <!-- tech right side data  -->
+              <div class="tech-data">
+                <h2 class="common-heading">Tech Used</h2>
+                <p>
+                  This application done with latest and different tech-stack and Yes,
+                I really enjoy during completed this project Students Marks Prediction.
+                </p>
+                <br />
+                <p>
+                 Using web with HTML, and using the best prediction value with machine learning algorithum.
+                </p>
+                <div class="tech-data-stats">
+                  <div class="tech-stats">
+                    <h3>HTML</h3>
+                    <div class="tech-progress-bar">
+                      <span>40%</span>
+                    </div>
+                  </div>
+                  <div class="tech-stats">
+                    <h3>Bootstrap</h3>
+                    <div class="tech-progress-bar tech-progress-2">
+                      <span>15%</span>
+                    </div>
+                  </div>
+                  <div class="tech-stats">
+                    <h3>CSS</h3>
+                    <div class="tech-progress-bar tech-progress-3">
+                      <span>15%</span>
+                    </div>
+                  </div>
+                  <div class="tech-stats">
+                    <h3>Python</h3>
+                    <div class="tech-progress-bar tech-progress-4">
+                      <span>30%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+  
+              <!-- ======================================== 
+                Our work counter Section Start  
+          ========================================  -->
+      
+          <section class="section section-work-data">
+            <div class="container">
+              <h2>Please! check your own score</h2>
+            </div>
+          </section>
+
+          <!-- ======================================== 
+                Our portfolio Section Start  
+          ========================================  -->
+          <section class="section section-portfolio" id="portfolio-section">
+            <div class="container" id="working">
+              <h2 class="common-heading">Working</h2>
+              <p>
+                You can check your prediction marks basis of your daily hourly rate study.
+                Enter Your Study Hours to Predict Marks
+              </p>
+            </div>
+      
+            
+ <div class="workimg">
+	
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        
+    	<input align="center" type="number" name="study_hours" placeholder=" Enter the study hours" required="required" class="work_inp"/>
+        
+        <br>
+        <br>
+        
+        <!-- Show button -->
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Marks</strong></button></a>
+        
+    </form>
+    </center>
+    <br>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+ </div>
+            
+          </section>
+  
+      
+      
+       <!-- ======================================== 
+                Our Freelancing   Section Start  
+          ========================================  -->
+      
+          <section class="section section-freelancing">
+            <div class="overlay"></div>
+            <div class="container">
+              <h2>I am <span>available</span> for freelancing</h2>
+              <p>
+               My name is Anurag and I'm a Full Stack Blockchain, Web and Data Science Developer.
+              </p>
+              <a href="/contact.html" class="btn">LinkdeIn</a>
+            </div>
+          </section>
+      
+          <!-- ======================================== 
+                Our contact us   Section Start  
+          ========================================  -->
+      
+          <section class="section section-contact" id="contact">
+            <div class="container">
+              <h2 class="common-heading">Contact Us</h2>
+            </div>
+      
+            <div class="section-contact-main contact-container">
+              <form action="https://formspree.io/f/xknyvwjo" method="POST">
+                <div class="grid grid-two-column">
+                  <div>
+                    <label for="username"></label>
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      id="username"
+                      required
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div>
+                    <label for="email"></label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="demo@mail.com"
+                      id="email"
+                      autocomplete="off"
+                      required
+                    />
+                  </div>
+                </div>
+      
+                <div>
+                  <label for="subject"></label>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="subject"
+                    id="subject"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="textarea"></label>
+                  <textarea
+                    name="textarea"
+                    id="textarea"
+                    cols="30"
+                    rows="10"
+                    autocomplete="off"
+                    placeholder="Write your message"
+                    required
+                  ></textarea>
+                </div>
+      
+                <div>
+                  <input
+                    type="submit"
+                    name="submit"
+                    id="submit"
+                    class="btn"
+                    value="send message"
+                  />
+                </div>
+              </form>
+            </div>
+          </section>
+      
+          <!-- ======================================== 
+                Our Footer   Section Start  
+          ========================================  -->
+          <footer class="section-footer section">
+            <div class="container grid grid-four-column">
+              <div class="f-about">
+                <h3>About</h3>
+                <p>
+                 The aim is to students predict their marks with the help of per hourly rate.
+                </p>
+              </div>
+              <!-- end -->
+              <div class="f-links">
+                <h3>Links</h3>
+                <ul>
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#home">home</a>
+                  </li>
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#tech">Tech</a>
+                  </li>
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#working">Work</a>
+                  </li>
+      
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- end  -->
+              <div class="f-services">
+                <h3>Services</h3>
+                <ul>
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#">Web Design</a>
+                  </li>
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#">Web Development</a>
+                  </li>
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#">Blockchain Development</a>
+                  </li>
+      
+                  <li>
+                    <span><ion-icon name="arrow-forward-outline"></ion-icon></span
+                    ><a href="#">Data Science</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- end  -->
+              <div class="f-address">
+                <h3>Have a Questions?</h3>
+                <address>
+                  <div>
+                    <p>
+                      <span><ion-icon name="location-outline"></ion-icon></span>
+                      Haryana, India
+                    </p>
+                  </div>
+      
+                  <div>
+                    <p>
+                      <span><ion-icon name="call-outline"></ion-icon></span>
+                      <a href="tel:+918397007464"> +91 8397007464 </a>
+                    </p>
+                  </div>
+      
+                  <div>
+                    <p>
+                      <span><ion-icon name="mail-outline"></ion-icon></span>
+                      <a href="mailto:anuragsaini2472002@gmail.com">
+                        anuragsaini2472002@gmail.com
+                      </a>
+                    </p>
+                  </div>
+                </address>
+              </div>
+            </div>
+      
+            <div class="container">
+              <div class="f-social-icons">
+                <a href="https://www.instagram.com/iamanuragsaini/" target="_blank">
+                  <ion-icon class="icons" name="logo-instagram">IG</ion-icon>
+                </a>
+      
+                <a href="https://www.facebook.com/anurag.saini.14473/" target="_blank">
+                  <ion-icon class="icons" name="logo-discord">FB</ion-icon>
+                </a>
+      
+                <a href="https://www.linkedin.com/in/anurag-saini-7317691a7/" target="_blank">
+                  <ion-icon class="icons" name="logo-youtube">In</ion-icon>
+                </a>
+              </div>
+      
+              <div class="f-credits">
+                <p>
+                  Copyright ©2022 All rights reserved | Made with 🧡
+                  by Anurag
+                </p>
+              </div>
+            </div>
+          </footer>
+</body>
+</html>
